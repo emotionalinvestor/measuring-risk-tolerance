@@ -1,1 +1,7 @@
-# measuring-risk-tolerance
+## Install
+
+`yarn`
+
+## Run
+
+`yarn start`
