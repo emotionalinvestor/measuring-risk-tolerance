@@ -21,6 +21,11 @@ function MeasureMyRiskTolerance() {
   const [questionTwoValue, setQuestionTwoValue] = React.useState(0);
   const [questionThreeValue, setQuestionThreeValue] = React.useState(0);
 
+  const halfOfYourInitialCapital = Math.round(yourInvestmentCapital / 2);
+  const fiftyPercentIncreaseOfYourInitialCapital = Math.round(
+    yourInvestmentCapital * 1.5
+  );
+
   function getYourSituationDescription() {
     if (
       !yourAge ||
@@ -374,10 +379,11 @@ function MeasureMyRiskTolerance() {
                 <h2>Now, let's play a game</h2>
 
                 <h3>
-                  Imagine your investment just went down 50% to $5000. You check
-                  the news - it's all bad news. Everyone you know says it will
-                  keep going down for another month or so. No idea when it will
-                  go back again. How much fear are you experiencing right now?
+                  Imagine your investment just went down 50% to $
+                  {halfOfYourInitialCapital}. You check the news - it's all bad
+                  news. Everyone you know says it will keep going down for
+                  another month or so. No idea when it will go back again. How
+                  much fear are you experiencing right now?
                 </h3>
                 <Rating
                   name="simple-controlled"
@@ -398,9 +404,10 @@ function MeasureMyRiskTolerance() {
             questionOneValue > 0 && (
               <React.Fragment>
                 <h3>
-                  Imagine your investment just went up 50% to $15000. You check
-                  the news - it's all good news. Everyone you know says it will
-                  keep going up for another month or so. How much greed are you
+                  Imagine your investment just went up 50% to $
+                  {fiftyPercentIncreaseOfYourInitialCapital}. You check the news
+                  - it's all good news. Everyone you know says it will keep
+                  going up for another month or so. How much greed are you
                   experiencing right now?
                 </h3>
                 <Rating
@@ -424,8 +431,9 @@ function MeasureMyRiskTolerance() {
               <React.Fragment>
                 <h3>
                   Imagine it's been 5 years since you've invested. Your
-                  investment didn't go anywhere. You still have $5000 invested.
-                  How much frustration are you experiencing right now?
+                  investment didn't go anywhere. You still have $
+                  {yourInvestmentCapital} invested. How much frustration are you
+                  experiencing right now?
                 </h3>
                 <Rating
                   name="simple-controlled"
